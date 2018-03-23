@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/content_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorBackgroundPrimary">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/app_bar_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:elevation="0dp">
+
+                <LinearLayout
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="horizontal"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="6dp"
+                    android:title="@string/app_name"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <com.benzneststudios.blognonestory.view.MyTextView
+                                android:id="@+id/tv_total"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 items"
+                                android:textColor="@color/colorTextDarkPrimary"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/colorBackgroundEditTextGrey"
+                            android:gravity="top|left"
+                            android:hint="@string/search"
+                            android:minLines="1"
+                            android:paddingBottom="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:paddingTop="4dp"
+                            android:textColor="@color/colorGreyDark"
+                            android:textColorHint="@color/colorSilver"
+                            android:textSize="14sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/colorGrey"/>
+
+
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            </android.support.v7.widget.RecyclerView>
+        </android.support.design.widget.CoordinatorLayout>
+
+        <fr.castorflex.android.circularprogressbar.CircularProgressBar
+            android:id="@+id/progress"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="32dp"
+            android:indeterminate="true"
+            app:cpb_color="@color/colorAccent"
+            app:cpb_max_sweep_angle="300"
+            app:cpb_min_sweep_angle="10"
+            app:cpb_rotation_speed="1.0"
+            app:cpb_stroke_width="12dp"
+            app:cpb_sweep_speed="1.0"/>
+
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No data."
+            android:textColor="@color/colorTextDarkPrimary"
+            android:textSize="22sp"/>
+
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorSilver"/>
+
+    <FrameLayout
+        android:id="@+id/content_node_content_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="@color/colorBackgroundPrimary"/>
+</LinearLayout>

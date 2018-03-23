@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/container"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#84FFFFFF"
+             android:padding="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="@string/nodata"
+        android:textColor="@color/colorWetAsphalt"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+</FrameLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_container"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorPrimary"
+              android:orientation="horizontal"
+              android:padding="0dp">
+
+    <LinearLayout
+        android:id="@+id/ll_container_1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_google_news"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Latest"
+            android:textColor="@color/colorTextLightPrimary"
+            android:textSize="10sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_container_2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_star"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Features"
+            android:textColor="@color/colorTextLightPrimary"
+            android:textSize="10sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_container_3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_tag_w"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Your tags"
+            android:textColor="@color/colorTextLightPrimary"
+            android:textSize="10sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_container_4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_resume"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Jobs"
+            android:textColor="@color/colorTextLightPrimary"
+            android:textSize="10sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_container_5"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_upcoming_w"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Upcoming"
+            android:textColor="@color/colorTextLightPrimary"
+            android:textSize="10sp"/>
+    </LinearLayout>
+
+</LinearLayout>

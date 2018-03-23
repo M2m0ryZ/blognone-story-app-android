@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#38649d</color>
+    <color name="colorPrimaryDark">#0f3b74</color>
+    <color name="colorAccent">#609e38</color>
+
+    <color name="colorToolBar">#302f50</color>
+    <color name="colorOwner">#214081</color>
+    <color name="colorOwnerDark">#0e2c60</color>
+    <color name="colorLine">#6c73a6</color>
+    <color name="colorTextPrimary">#686868</color>
+    <color name="colorTextLightPrimary">#FFFFFF</color>
+    <color name="colorTextDarkPrimary">#686868</color>
+
+    <color name="colorWetAsphalt">#34495e</color>
+    <color name="colorWetAsphaltBlack">#2c3e50</color>
+    <color name="colorWetAsphaltDark">#222f3d</color>
+    <color name="colorBackgroundPrimary">#ecf0f1</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorSilver">#bdc3c7</color>
+
+
+    <color name="colorSteelBlue">#38649d</color>
+    <color name="colorSteelBlueDark">#0f3b74</color>
+
+    <color name="colorBlognoneGreen">#609e38</color>
+
+    <color name="colorGreen">#2ecc71</color>
+    <color name="colorGreenDark">#27ae60</color>
+
+    <color name="colorGrey">#cacccc</color>
+    <color name="colorGreyDark">#5c6566</color>
+
+    <color name="colorBlue">#3498db</color>
+    <color name="colorBlueDark">#2980b9</color>
+
+    <color name="colorWorkplace">#42b9b9</color>
+    <color name="colorBackgroundWorkplace">#f0fbfb</color>
+
+    <color name="colorYellow">#f1c40f</color>
+    <color name="colorYellowDark">#f39c12</color>
+    <color name="colorYellowDark2">#da8600</color>
+
+    <color name="colorSticky">#da8600</color>
+    <color name="colorBackgroundSticky">#ffeed5</color>
+
+    <color name="colorTurquoise">#1abc9c</color>
+    <color name="colorTurquoiseDark">#16a085</color>
+
+    <color name="colorRed">#e74c3c</color>
+    <color name="colorRedDark">#c0392b</color>
+
+
+    <color name="colorFavoriteBorder">#e74c3c</color>
+    <color name="colorBackgroundFavorite">#ffcac4</color>
+
+    <color name="colorViewedBorder">#2ecc71</color>
+    <color name="colorBackgroundViewed">#b8ffd6</color>
+
+    <color name="colorCacheBorder">#3498db</color>
+    <color name="colorBackgroundCache">#c4e7ff</color>
+
+    <color name="colorGreyBlack">#57606f</color>
+    <color name="colorGreyBlackDark">#2f3542</color>
+
+    <color name="colorTomato">#ff7f50</color>
+    <color name="colorTomatoDark">#ff6348</color>
+
+    <color name="colorPurple">#5f27cd</color>
+    <color name="colorPurpleDark">#341f97</color>
+
+    <color name="colorWildGreen">#1dd1a1</color>
+    <color name="colorWildGreenDark">#10ac84</color>
+
+    <color name="colorSand">#feca57</color>
+    <color name="colorSandDark">#ff9f43</color>
+
+    <color name="colorPoloniex">#075c61</color>
+    <color name="colorPoloniexDark">#052628</color>
+
+
+
+    <color name="colorPink">#ff9ff3</color>
+    <color name="colorPinkDark">#f368e0</color>
+
+    <color name="colorOrange">#f39c12</color>
+
+
+    <color name="colorValueDown">#ff2828</color>
+    <color name="colorValueUp">#1abc9c</color>
+    <color name="colorValueNone">#686868</color>
+
+    <color name="colorError">#ff2828</color>
+    <color name="colorSuccess">#1abc9c</color>
+
+    <color name="colorBackgroundSecondary">#e7e7e7</color>
+    <color name="colorBackgroundEditTextGrey">#e2e2e2</color>
+</resources>

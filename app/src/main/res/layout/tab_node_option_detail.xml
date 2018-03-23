@@ -1,0 +1,127 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="4dp">
+
+    <FrameLayout
+        android:id="@+id/fl_viewed_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorViewedBorder"
+        android:padding="1dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundViewed">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="2dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_checkmark"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:text="Viewed"
+                    android:textColor="@color/colorViewedBorder"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_favorite_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorFavoriteBorder"
+        android:layout_marginLeft="4dp"
+        android:padding="1dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundFavorite">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="2dp">
+
+                <ImageView
+                    android:id="@+id/img_favorite"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_favorite_filled"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:text="Favorite"
+                    android:textColor="@color/colorFavoriteBorder"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_cache_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorCacheBorder"
+        android:layout_marginLeft="4dp"
+        android:padding="1dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundCache">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="2dp">>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_document"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:text="Saved"
+                    android:textColor="@color/colorCacheBorder"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

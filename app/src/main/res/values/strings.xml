@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Blognone Story</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="setting">Settings</string>
+    <string name="refresh">Refresh</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="link">Open in browser</string>
+    <string name="copy_link">Copy URL</string>
+    <string name="forum">Forum</string>
+    <string name="tags">Tags</string>
+    <string name="about">About</string>
+
+    <string name="small">Small</string>
+    <string name="normal">Normal</string>
+    <string name="large">Large</string>
+    <string name="large_extra">Extra</string>
+
+    <string name="general">General</string>
+    <string name="display">Display</string>
+    <string name="nodata">No data</string>
+    <string name="search">Search</string>
+
+    <plurals name="items">
+        <item quantity="one">item</item>
+        <item quantity="other">items</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="one">comment</item>
+        <item quantity="other">comments</item>
+    </plurals>
+    <plurals name="new_comments">
+        <item quantity="one">new comment</item>
+        <item quantity="other">new comments</item>
+    </plurals>
+</resources>

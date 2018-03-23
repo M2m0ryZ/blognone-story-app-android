@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.benzneststudios.blognonestory">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_app"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize">
+        </activity>
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="www.blognone.com" />
+                <data android:scheme="http" android:host="www.blognone.com" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".widget.MyBlognoneNodeListWidgetRemoteService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <service
+            android:name=".widget.MyAutoUpdateWidgetService"/>
+
+        <receiver
+            android:name=".widget.MyBlognoneNodeListWidgetProvider"
+            android:label="Blognone Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_node_list"/>
+        </receiver>
+
+        <service
+            android:name=".firebase.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".firebase.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="7a9afd0beedc81839b6b261bbd8c6164c1052e11" />
+    </application>
+
+
+</manifest>

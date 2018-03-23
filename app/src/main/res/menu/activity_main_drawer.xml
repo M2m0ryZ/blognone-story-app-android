@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/ic_app"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_interview"
+            android:icon="@drawable/ic_interview"
+            android:title="Interview"/>
+        <item
+            android:id="@+id/nav_workplace"
+            android:icon="@drawable/ic_workplace"
+            android:title="Workplace"/>
+        <item
+            android:id="@+id/nav_tag"
+            android:icon="@drawable/ic_tag"
+            android:title="Tags"/>
+        <item
+            android:id="@+id/nav_favorite_node"
+            android:icon="@drawable/ic_favorite"
+            android:title="Favorite topic"/>
+        <item
+            android:id="@+id/nav_cache_node"
+            android:icon="@drawable/ic_document"
+            android:title="Saved topic"/>
+
+    <item android:title="@string/forum"
+        android:id="@+id/nav_group_forum">
+        <menu>
+            <item
+                android:id="@+id/nav_forum_blognone_th"
+                android:icon="@drawable/ic_circled_male_th"
+                android:title="Blognone Forum (ภาษาไทย)"/>
+            <item
+                android:id="@+id/nav_forum_blognone_eng"
+                android:icon="@drawable/ic_circled_male_en"
+                android:title="Blognone Forum (English)"/>
+
+            <item
+                android:id="@+id/nav_forum_python"
+                android:icon="@drawable/ic_python"
+                android:title="Python"/>
+            <item
+                android:id="@+id/nav_forum_ruby"
+                android:icon="@drawable/ic_ruby"
+                android:title="Ruby"/>
+            <item
+                android:id="@+id/nav_forum_programming_problem"
+                android:icon="@drawable/ic_puzzled"
+                android:title="Programming Problems"/>
+            <item
+                android:id="@+id/nav_forum_projects"
+                android:icon="@drawable/ic_project"
+                android:title="Projects"/>
+        </menu>
+    </item>
+    <item android:title="More"
+        android:id="@+id/nav_other">
+        <menu>
+            <item
+                android:id="@+id/nav_history"
+                android:icon="@drawable/ic_recent_view"
+                android:title="Recent viewed"/>
+
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_setting"
+                android:title="@string/setting"/>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="@string/about"/>
+        </menu>
+    </item>
+
+
+
+</menu>

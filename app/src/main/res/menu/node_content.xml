@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_open_in_browser"
+        android:icon="@drawable/ic_open_in_browser"
+        android:orderInCategory="100"
+        android:title="@string/link"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_copy_link"
+        android:icon="@drawable/ic_link_w"
+        android:orderInCategory="100"
+        android:title="@string/copy_link"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_refresh_content"
+        android:icon="@drawable/ic_refresh"
+        android:orderInCategory="100"
+        android:title="@string/refresh"
+        app:showAsAction="ifRoom"/>
+</menu>
