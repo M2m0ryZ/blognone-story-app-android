@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_container"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorPrimary"
+              android:orientation="horizontal"
+              android:padding="0dp">
+
+    <LinearLayout
+        android:id="@+id/ll_container_1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_google_news"/>
+
+        <TextView
+            android:id="@+id/tv_tab_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Body"
+            android:textColor="@color/colorTextLightPrimary"
+            android:textSize="@dimen/font_size_tab"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_container_2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/ic_comment"/>
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_count_comment"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom|right"-->
+            <!--android:background="@drawable/circle_badge"-->
+            <!--android:padding="2dp"-->
+            <!--android:text="100"-->
+            <!--android:alpha="0.9"-->
+            <!--android:textColor="@color/colorTextLightPrimary"-->
+            <!--android:textSize="5sp"/>-->
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_tab_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Comments"
+            android:textColor="@color/colorTextLightPrimary"
+            android:textSize="@dimen/font_size_tab"/>
+    </LinearLayout>
+</LinearLayout>

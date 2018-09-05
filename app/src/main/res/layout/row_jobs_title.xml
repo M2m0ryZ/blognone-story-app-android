@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_container_feature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/colorWhite">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:padding="4dp"
+                    android:layout_marginLeft="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_feature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FEATURED"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/ll_container_body_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:padding="1dp">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_container_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_detail_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="6dp"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingTop="6dp">
+
+                            <ImageView
+                                android:id="@+id/img_node"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/ic_ms_logo"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Data Engineer for Machine Learning"
+                                    android:textAppearance="@style/MitrSemiBold"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="18sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:ellipsize="marquee"
+                                    android:text="Dataflow Co. th"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="16sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_district"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:ellipsize="marquee"
+                                    android:text="BTS Saladang ,Bangkok"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="12sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_salary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:ellipsize="marquee"
+                                    android:text="40,000 - 60,000 THB"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/colorSilver"-->
+                    <!--android:layout_marginTop="8dp"/>-->
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp">
+
+                        <LinearLayout
+                            android:id="@+id/ll_tags_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:orientation="horizontal">
+
+                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/colorSilver"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/tv_last_update"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="2 days ago"
+                            android:textColor="@color/colorTextDarkPrimary"
+                            android:textSize="14sp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

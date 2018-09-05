@@ -1,0 +1,29 @@
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="6dp"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.github.angads25.toggle.LabeledSwitch
+        android:id="@+id/switch_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:colorBorder="@color/colorPrimary"
+        app:colorOn="@color/colorAccent"
+        app:on="false"
+        app:textOff="OFF"
+        app:textOn="ON"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="6dp"
+        android:text="CONTRACT"
+        android:textColor="@color/colorTextDarkPrimary"
+        android:textSize="14sp"/>
+</LinearLayout>

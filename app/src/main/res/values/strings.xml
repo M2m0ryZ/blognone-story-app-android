@@ -29,6 +29,10 @@
         <item quantity="one">item</item>
         <item quantity="other">items</item>
     </plurals>
+    <plurals name="jobs">
+        <item quantity="one">job</item>
+        <item quantity="other">jobs</item>
+    </plurals>
     <plurals name="comments">
         <item quantity="one">comment</item>
         <item quantity="other">comments</item>

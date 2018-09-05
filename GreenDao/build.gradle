@@ -2,7 +2,7 @@ project(':GreenDao') {
     apply plugin: 'application'
     apply plugin: 'java'
 
-    mainClassName = "com.benzneststudios.greendao.MyDaoGenerator"
+    mainClassName = "com.benznestdeveloper.greendao.MyDaoGenerator"
     def outputDir = "../app/src/main/java-gen"
 
     dependencies {

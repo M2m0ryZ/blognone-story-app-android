@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/background_dialog_rounded"
+                  android:minWidth="340dp"
+                  android:orientation="vertical"
+                  android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Search your jobs"
+            android:textAppearance="@style/MitrSemiBold"
+            android:textColor="@color/colorTextDarkPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KEYWORD"
+                android:textAppearance="@style/MitrSemiBold"
+                android:textColor="@color/colorTextDarkPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/edt_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorWhite"
+                android:gravity="top|left"
+                android:hint="Job title, Skill, Company.."
+                android:minLines="1"
+                android:paddingBottom="4dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:textColor="@color/colorGreyDark"
+                android:textColorHint="@color/colorSilver"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_job_type_header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TYPE"
+                    android:textAppearance="@style/MitrSemiBold"
+                    android:textColor="@color/colorTextDarkPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/img_arrow_job_type"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="6dp"
+                    android:src="@drawable/ic_arrow_down"/>
+            </LinearLayout>
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/fb_job_type_tag_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:alignContent="flex_start"
+                app:alignItems="flex_start"
+                app:flexWrap="wrap">
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_job_type_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_job_level_header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JOB LEVEL"
+                    android:textAppearance="@style/MitrSemiBold"
+                    android:textColor="@color/colorTextDarkPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/img_arrow_job_level"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="6dp"
+                    android:src="@drawable/ic_arrow_down"/>
+            </LinearLayout>
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/fb_job_level_tag_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:alignContent="flex_start"
+                app:alignItems="flex_start"
+                app:flexWrap="wrap">
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_job_level_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_job_function_header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JOB FUNCTION"
+                    android:textAppearance="@style/MitrSemiBold"
+                    android:textColor="@color/colorTextDarkPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/img_arrow_job_function"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="6dp"
+                    android:src="@drawable/ic_arrow_down"/>
+            </LinearLayout>
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/fb_job_function_tag_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:alignContent="flex_start"
+                app:alignItems="flex_start"
+                app:flexWrap="wrap">
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_job_function_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAccent"
+            android:text="Search"
+            android:textColor="@color/colorTextLightPrimary"
+            android:textSize="18sp"/>
+        <!--<Button-->
+            <!--android:id="@+id/btn_all"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:background="@color/colorPrimary"-->
+            <!--android:text="show All"-->
+            <!--android:textColor="@color/colorTextLightPrimary"-->
+            <!--android:textSize="18sp"/>-->
+    </LinearLayout>
+</ScrollView>

@@ -122,7 +122,7 @@
                         android:layout_weight="1"/>
 
                     <TextView
-                        android:id="@+id/tv_comment_count"
+                        android:id="@+id/tv_last_update"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="6dp"

@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp">
 
-                <com.benzneststudios.blognonestory.view.MyTextView
+                <com.benznestdeveloper.blognonestory.view.MyTextView
                     android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                         android:orientation="horizontal"
                         android:padding="4dp">
 
-                        <com.benzneststudios.blognonestory.view.MyTextView
+                        <com.benznestdeveloper.blognonestory.view.MyTextView
                             android:id="@+id/tv_writer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -79,68 +79,74 @@
                             android:layout_marginLeft="6dp"
                             android:orientation="horizontal">
 
-                            <com.benzneststudios.blognonestory.view.MyTagView
+                            <com.benznestdeveloper.blognonestory.view.MyTagView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
-                            <com.benzneststudios.blognonestory.view.MyTagView
+                            <com.benznestdeveloper.blognonestory.view.MyTagView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
-                            <com.benzneststudios.blognonestory.view.MyTagView
+                            <com.benznestdeveloper.blognonestory.view.MyTagView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
-                            <com.benzneststudios.blognonestory.view.MyTagView
+                            <com.benznestdeveloper.blognonestory.view.MyTagView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                         </LinearLayout>
                     </HorizontalScrollView>
 
                     <LinearLayout
+                        android:id="@+id/ll_detail_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingLeft="6dp"
-                        android:paddingRight="6dp">
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/img_node"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:src="@drawable/ic_ms_logo"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp">
 
-                        <com.benzneststudios.blognonestory.view.MyTextView
-                            android:id="@+id/tv_description"
+                            <ImageView
+                                android:id="@+id/img_node"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/ic_ms_logo"/>
+
+                            <com.benznestdeveloper.blognonestory.view.MyTextView
+                                android:id="@+id/tv_description"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_marginLeft="6dp"
+                                android:ellipsize="marquee"
+                                android:gravity="bottom"
+                                android:text="Microsoft shipped its first video game in 1981, appropriately named Microsoft Adventure. "
+                                android:textColor="@color/colorTextDarkPrimary"
+                                android:textSize="14sp"/>
+
+                        </LinearLayout>
+
+                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                            android:id="@+id/tv_description_2"
                             android:layout_width="wrap_content"
-                            android:layout_height="100dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="6dp"
                             android:ellipsize="marquee"
-                            android:gravity="bottom"
-                            android:text="Microsoft shipped its first video game in 1981, appropriately named Microsoft Adventure. "
+                            android:maxLines="5"
+                            android:text="Microsoft shipped its first video game in 1981, appropriately named Microsoft Adventure. It was an MS-DOS game icrosoft shipped its first video game in 1981, appropriately named Microsoft Adventure. It was an MS-DOS game"
                             android:textColor="@color/colorTextDarkPrimary"
                             android:textSize="14sp"/>
-
                     </LinearLayout>
-
-                    <com.benzneststudios.blognonestory.view.MyTextView
-                        android:id="@+id/tv_description_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp"
-                        android:ellipsize="marquee"
-                        android:maxLines="5"
-                        android:text="Microsoft shipped its first video game in 1981, appropriately named Microsoft Adventure. It was an MS-DOS game icrosoft shipped its first video game in 1981, appropriately named Microsoft Adventure. It was an MS-DOS game"
-                        android:textColor="@color/colorTextDarkPrimary"
-                        android:textSize="14sp"/>
-
                     <!--<View-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="1dp"-->
-                        <!--android:background="@color/colorSilver"-->
-                        <!--android:layout_marginTop="8dp"/>-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/colorSilver"-->
+                    <!--android:layout_marginTop="8dp"/>-->
 
-                    <com.benzneststudios.blognonestory.view.MyNodeOptionDetailTabViewView
+                    <com.benznestdeveloper.blognonestory.view.MyNodeOptionDetailTabViewView
                         android:id="@+id/tab_option_detail_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -168,25 +174,27 @@
                             android:layout_width="0dp"
                             android:layout_height="1dp"
                             android:layout_weight="1"/>
-                        <com.benzneststudios.blognonestory.view.MyTextView
-                            android:id="@+id/tv_comment_count"
+
+                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                            android:id="@+id/tv_last_update"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="6dp"
                             android:text="10 comments"
                             android:textColor="@color/colorTextDarkPrimary"
                             android:textSize="14sp"/>
-                        <com.benzneststudios.blognonestory.view.MyTextView
+
+                        <com.benznestdeveloper.blognonestory.view.MyTextView
                             android:id="@+id/tv_new_comment_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="10 new comments"
                             android:background="@drawable/bg_rounded"
-                            android:paddingTop="2dp"
                             android:paddingBottom="2dp"
                             android:paddingLeft="6dp"
                             android:paddingRight="6dp"
+                            android:paddingTop="2dp"
+                            android:text="10 new comments"
                             android:textColor="@color/colorTextLightPrimary"
                             android:textSize="14sp"/>
                     </LinearLayout>
