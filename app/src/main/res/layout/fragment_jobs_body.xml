@@ -135,37 +135,104 @@
                                         android:id="@+id/webview_body"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"/>
-
-                                    <View
-                                        android:layout_width="match_parent"
-                                        android:layout_height="1dp"
-                                        android:background="@color/colorSilver"
-                                        android:paddingTop="4dp"/>
-
-                                    <com.benznestdeveloper.blognonestory.view.MyNodeOptionTabViewView
-                                        android:id="@+id/tab_option_view"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="4dp"/>
-
                                 </LinearLayout>
                             </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Contact"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="20sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Microsoft"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="16sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="51 Naradhiwas Ras"
+                                    android:autoLink="all"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="14sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_tel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoLink="phone"
+                                    android:text="51 Naradhiwas Ras"
+                                    android:visibility="gone"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="14sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_email"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoLink="email"
+                                    android:text="51 Naradhiwas Ras"
+                                    android:visibility="gone"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="14sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_website"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoLink="web"
+                                    android:text="51 Naradhiwas Ras"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="14sp"/>
+                            </LinearLayout>
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
 
                 </FrameLayout>
 
+                <TextView
+                    android:id="@+id/tv_more_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="More at LINE Corp"
+                    android:textColor="@color/colorTextDarkPrimary"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_more_count_job"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:text="2 Other openings"
+                    android:textColor="@color/colorTextDarkPrimary"
+                    android:textSize="14sp"/>
+
                 <LinearLayout
                     android:id="@+id/ll_other_job"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
+                    android:layout_margin="8dp"
                     android:orientation="vertical">
 
                     <include layout="@layout/row_jobs_title"/>
                 </LinearLayout>
 
-                <com.benznestdeveloper.blognonestory.view.MyTextView
+                <com.panuwatjan.blognonestory.view.MyTextView
                     android:id="@+id/tv_blognone_url"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

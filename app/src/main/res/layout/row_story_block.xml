@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/ll_container_body_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:padding="1dp">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_container_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_detail_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="6dp"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingTop="6dp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_story_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:text="Help investors all over the world "
+                                    android:textAppearance="@style/MitrSemiBold"
+                                    android:textColor="@color/colorWetAsphaltDark"
+                                    android:textSize="18sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_story_description"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="6dp"
+                                    android:layout_marginTop="4dp"
+                                    android:ellipsize="marquee"
+                                    android:text="We believe investing isn’t and shouldn’t be a complicated task, and we strive to simplify the process so more people can grow their wealth using our easy-to-follow method. We delight in building and shipping things that make our users happy and perform better in the stock market. You’ll be a big par"
+                                    android:textColor="@color/colorTextDarkPrimary"
+                                    android:textSize="12sp"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="6dp">
+
+                                    <ImageView
+                                        android:id="@+id/img_story"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="120dp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/sample_cover"/>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

@@ -15,11 +15,11 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="com.benznestdeveloper.pantipstory2.activity.MainActivity">
+        tools:context="com.panuwatjan.pantipstory2.activity.MainActivity">
 
     </android.support.v4.view.ViewPager>
 
-    <com.benznestdeveloper.blognonestory.view.MyBlognoneMainTabView
+    <com.panuwatjan.blognonestory.view.MyBlognoneMainTabView
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

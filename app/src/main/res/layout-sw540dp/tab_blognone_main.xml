@@ -87,33 +87,9 @@
             android:textSize="@dimen/font_size_tab"/>
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/ll_container_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@color/colorPrimaryDark"
-        android:minWidth="120dp"
-        android:orientation="vertical"
-        android:padding="8dp">
-
-        <ImageView
-            android:layout_width="@dimen/icon_size"
-            android:layout_height="@dimen/icon_size"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_resume"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Jobs"
-            android:textColor="@color/colorTextLightPrimary"
-            android:textSize="@dimen/font_size_tab"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_container_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"

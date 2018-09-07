@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp">
 
-                <com.benznestdeveloper.blognonestory.view.MyTextView
+                <com.panuwatjan.blognonestory.view.MyTextView
                     android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                         android:orientation="horizontal"
                         android:padding="4dp">
 
-                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                        <com.panuwatjan.blognonestory.view.MyTextView
                             android:id="@+id/tv_writer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -79,19 +79,19 @@
                             android:layout_marginLeft="6dp"
                             android:orientation="horizontal">
 
-                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                            <com.panuwatjan.blognonestory.view.MyTagView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
-                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                            <com.panuwatjan.blognonestory.view.MyTagView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
-                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                            <com.panuwatjan.blognonestory.view.MyTagView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
-                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                            <com.panuwatjan.blognonestory.view.MyTagView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                         </LinearLayout>
@@ -116,7 +116,7 @@
                                 android:layout_height="90dp"
                                 android:src="@drawable/ic_ms_logo"/>
 
-                            <com.benznestdeveloper.blognonestory.view.MyTextView
+                            <com.panuwatjan.blognonestory.view.MyTextView
                                 android:id="@+id/tv_description"
                                 android:layout_width="wrap_content"
                                 android:layout_height="100dp"
@@ -129,7 +129,7 @@
 
                         </LinearLayout>
 
-                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                        <com.panuwatjan.blognonestory.view.MyTextView
                             android:id="@+id/tv_description_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                     <!--android:background="@color/colorSilver"-->
                     <!--android:layout_marginTop="8dp"/>-->
 
-                    <com.benznestdeveloper.blognonestory.view.MyNodeOptionDetailTabViewView
+                    <com.panuwatjan.blognonestory.view.MyNodeOptionDetailTabViewView
                         android:id="@+id/tab_option_detail_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
                             android:layout_height="1dp"
                             android:layout_weight="1"/>
 
-                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                        <com.panuwatjan.blognonestory.view.MyTextView
                             android:id="@+id/tv_last_update"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -184,7 +184,7 @@
                             android:textColor="@color/colorTextDarkPrimary"
                             android:textSize="14sp"/>
 
-                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                        <com.panuwatjan.blognonestory.view.MyTextView
                             android:id="@+id/tv_new_comment_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

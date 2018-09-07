@@ -52,7 +52,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="6dp">
 
-                                <com.benznestdeveloper.blognonestory.view.MyTextView
+                                <com.panuwatjan.blognonestory.view.MyTextView
                                     android:id="@+id/tv_title"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                                         android:orientation="horizontal"
                                         android:padding="4dp">
 
-                                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                                        <com.panuwatjan.blognonestory.view.MyTextView
                                             android:id="@+id/tv_writer"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                                             android:textColor="@color/colorTextDarkPrimary"
                                             android:textSize="12sp"/>
 
-                                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                                        <com.panuwatjan.blognonestory.view.MyTextView
                                             android:id="@+id/tv_date"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -113,19 +113,19 @@
                                             android:layout_marginLeft="6dp"
                                             android:orientation="horizontal">
 
-                                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                                            <com.panuwatjan.blognonestory.view.MyTagView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"/>
 
-                                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                                            <com.panuwatjan.blognonestory.view.MyTagView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"/>
 
-                                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                                            <com.panuwatjan.blognonestory.view.MyTagView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"/>
 
-                                            <com.benznestdeveloper.blognonestory.view.MyTagView
+                                            <com.panuwatjan.blognonestory.view.MyTagView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"/>
                                         </LinearLayout>
@@ -142,7 +142,7 @@
                                         android:background="@color/colorSilver"
                                         android:paddingTop="4dp"/>
 
-                                    <com.benznestdeveloper.blognonestory.view.MyNodeOptionTabViewView
+                                    <com.panuwatjan.blognonestory.view.MyNodeOptionTabViewView
                                         android:id="@+id/tab_option_view"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -193,7 +193,7 @@
                                     android:background="@color/colorWhite"
                                     android:orientation="vertical">
 
-                                    <com.benznestdeveloper.blognonestory.view.MyTextView
+                                    <com.panuwatjan.blognonestory.view.MyTextView
                                         android:id="@+id/tv_last_update"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -217,7 +217,7 @@
                 </FrameLayout>
 
 
-                <com.benznestdeveloper.blognonestory.view.MyTextView
+                <com.panuwatjan.blognonestory.view.MyTextView
                     android:id="@+id/tv_blognone_url"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

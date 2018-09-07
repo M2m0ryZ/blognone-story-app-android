@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.benznestdeveloper.blognonestory">
+          package="com.panuwatjan.blognonestory">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
-        android:name="com.benznestdeveloper.blognonestory.MyApplication"
+        android:name="com.panuwatjan.blognonestory.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app"
         android:label="@string/app_name"
@@ -16,13 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.benznestdeveloper.blognonestory.activity.MainActivity"
+            android:name="com.panuwatjan.blognonestory.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation|screenSize">
         </activity>
         <activity
-            android:name="com.benznestdeveloper.blognonestory.activity.SplashScreenActivity"
+            android:name="com.panuwatjan.blognonestory.activity.SplashScreenActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -39,14 +39,14 @@
         </activity>
 
         <service
-            android:name="com.benznestdeveloper.blognonestory.widget.MyBlognoneNodeListWidgetRemoteService"
+            android:name="com.panuwatjan.blognonestory.widget.MyBlognoneNodeListWidgetRemoteService"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>
 
         <service
-            android:name="com.benznestdeveloper.blognonestory.widget.MyAutoUpdateWidgetService"/>
+            android:name="com.panuwatjan.blognonestory.widget.MyAutoUpdateWidgetService"/>
 
         <receiver
-            android:name="com.benznestdeveloper.blognonestory.widget.MyBlognoneNodeListWidgetProvider"
+            android:name="com.panuwatjan.blognonestory.widget.MyBlognoneNodeListWidgetProvider"
             android:label="Blognone Widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -58,14 +58,14 @@
         </receiver>
 
         <service
-            android:name="com.benznestdeveloper.blognonestory.firebase.MyFirebaseInstanceIdService">
+            android:name="com.panuwatjan.blognonestory.firebase.MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
 
         <service
-            android:name="com.benznestdeveloper.blognonestory.firebase.MyFirebaseMessagingService">
+            android:name="com.panuwatjan.blognonestory.firebase.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>

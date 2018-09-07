@@ -61,7 +61,7 @@
                                     android:background="@color/colorWhite"
                                     android:orientation="vertical">
 
-                                    <com.benznestdeveloper.blognonestory.view.MyTextView
+                                    <com.panuwatjan.blognonestory.view.MyTextView
                                         android:id="@+id/tv_last_update"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
                 </FrameLayout>
-                <com.benznestdeveloper.blognonestory.view.MyTextView
+                <com.panuwatjan.blognonestory.view.MyTextView
                     android:id="@+id/tv_blognone_url"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

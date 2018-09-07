@@ -24,6 +24,7 @@
     <string name="display">Display</string>
     <string name="nodata">No data</string>
     <string name="search">Search</string>
+    <string name="jobs">Jobs</string>
 
     <plurals name="items">
         <item quantity="one">item</item>
@@ -40,5 +41,9 @@
     <plurals name="new_comments">
         <item quantity="one">new comment</item>
         <item quantity="other">new comments</item>
+    </plurals>
+    <plurals name="other_opening">
+        <item quantity="one">Other opening</item>
+        <item quantity="other">Other openings</item>
     </plurals>
 </resources>

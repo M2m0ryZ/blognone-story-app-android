@@ -93,30 +93,6 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_resume"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Jobs"
-            android:textColor="@color/colorTextLightPrimary"
-            android:textSize="10sp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll_container_5"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="vertical"
-        android:padding="6dp">
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
             android:src="@drawable/ic_upcoming_w"/>
 
         <TextView

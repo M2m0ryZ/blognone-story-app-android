@@ -14,11 +14,10 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 
-
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.benznestdeveloper.blognonestory"
+        applicationId "com.panuwatjan.blognonestory"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 6
@@ -81,4 +80,4 @@ dependencies {
 
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'

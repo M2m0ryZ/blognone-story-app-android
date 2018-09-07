@@ -7,7 +7,7 @@
     android:layout_marginRight="2dp"
     android:padding="1dp">
 
-    <com.benznestdeveloper.blognonestory.view.MyTextView
+    <com.panuwatjan.blognonestory.view.MyTextView
         android:id="@+id/tv_tag_skill_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

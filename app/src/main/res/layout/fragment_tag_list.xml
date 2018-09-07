@@ -41,7 +41,7 @@
                         android:layout_gravity="center_vertical"
                         android:orientation="vertical">
 
-                        <com.benznestdeveloper.blognonestory.view.MyTextView
+                        <com.panuwatjan.blognonestory.view.MyTextView
                             android:id="@+id/tv_keyword"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
     </android.support.design.widget.CoordinatorLayout>
 
 
-    <com.benznestdeveloper.blognonestory.view.MyTextView
+    <com.panuwatjan.blognonestory.view.MyTextView
         android:id="@+id/tv_no_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -3,33 +3,50 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:showIn="navigation_view">
 
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@mipmap/ic_app"
-            android:title="Home"/>
-        <item
-            android:id="@+id/nav_interview"
-            android:icon="@drawable/ic_interview"
-            android:title="Interview"/>
-        <item
-            android:id="@+id/nav_workplace"
-            android:icon="@drawable/ic_workplace"
-            android:title="Workplace"/>
-        <item
-            android:id="@+id/nav_tag"
-            android:icon="@drawable/ic_tag"
-            android:title="Tags"/>
-        <item
-            android:id="@+id/nav_favorite_node"
-            android:icon="@drawable/ic_favorite"
-            android:title="Favorite topic"/>
-        <item
-            android:id="@+id/nav_cache_node"
-            android:icon="@drawable/ic_document"
-            android:title="Saved topic"/>
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@mipmap/ic_app"
+        android:title="Home"/>
+    <item
+        android:id="@+id/nav_interview"
+        android:icon="@drawable/ic_interview"
+        android:title="Interview"/>
+    <item
+        android:id="@+id/nav_workplace"
+        android:icon="@drawable/ic_workplace"
+        android:title="Workplace"/>
+    <item
+        android:id="@+id/nav_tag"
+        android:icon="@drawable/ic_tag"
+        android:title="Tags"/>
+    <item
+        android:id="@+id/nav_favorite_node"
+        android:icon="@drawable/ic_favorite"
+        android:title="Favorite topic"/>
+    <item
+        android:id="@+id/nav_cache_node"
+        android:icon="@drawable/ic_document"
+        android:title="Saved topic"/>
 
-    <item android:title="@string/forum"
-        android:id="@+id/nav_group_forum">
+    <item
+        android:id="@+id/nav_group_job"
+        android:title="@string/jobs">
+        <menu>
+            <item
+                android:id="@+id/nav_job"
+                android:icon="@drawable/ic_jobs"
+                android:title="Jobs"/>
+
+            <item
+                android:id="@+id/nav_company"
+                android:icon="@drawable/ic_company"
+                android:title="Companies"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/nav_group_forum"
+        android:title="@string/forum">
         <menu>
             <item
                 android:id="@+id/nav_forum_blognone_th"
@@ -58,8 +75,9 @@
                 android:title="Projects"/>
         </menu>
     </item>
-    <item android:title="More"
-        android:id="@+id/nav_other">
+    <item
+        android:id="@+id/nav_other"
+        android:title="More">
         <menu>
             <item
                 android:id="@+id/nav_history"
@@ -76,7 +94,6 @@
                 android:title="@string/about"/>
         </menu>
     </item>
-
 
 
 </menu>

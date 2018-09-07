@@ -34,7 +34,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <com.benznestdeveloper.blognonestory.view.MyTextView
+                <com.panuwatjan.blognonestory.view.MyTextView
                     android:id="@+id/tv_tag_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
                     android:text="Microsoft"
                     android:textSize="20sp"/>
 
-                <com.benznestdeveloper.blognonestory.view.MyTextView
+                <com.panuwatjan.blognonestory.view.MyTextView
                     android:id="@+id/tv_tag_endpoint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
