@@ -18,6 +18,7 @@ public class MyConstants {
     public static final String TAG_NAV_INTERVIEW = "TAG_NAV_INTERVIEW";
     public static final String TAG_NAV_WORKPLACE = "TAG_NAV_WORKPLACE";
     public static final String TAG_NAV_COMPANIES= "TAG_NAV_COMPANIES";
+    public static final String TAG_NAV_JOBS= "TAG_NAV_JOBS";
 
 
     public static final String KEY_MODE_NODE = "KEY_MODE_NODE";

@@ -79,11 +79,11 @@ public class MyRowCompanyTitleView extends FrameLayout {
             }
         });
 
-        if (company.getCover() == null) {
-            imgCover.setVisibility(GONE);
-        } else {
-            imgCover.setVisibility(VISIBLE);
-        }
+//        if (company.getCover() == null) {
+//            imgCover.setVisibility(GONE);
+//        } else {
+//            imgCover.setVisibility(VISIBLE);
+//        }
 
         if (company.getPremium()) {
             tvFeature.setVisibility(VISIBLE);
@@ -95,7 +95,7 @@ public class MyRowCompanyTitleView extends FrameLayout {
 
         tvDescription.setText(company.getBrief());
 
-        MyGlide.load(getContext(), imgCover, company.getCover());
+        MyGlide.load(getContext(), imgCover, company.getCover(),R.drawable.bg_empty);
 
     }
 

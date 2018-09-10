@@ -135,6 +135,9 @@ public class NodeBodyFragment extends Fragment {
         webViewBody.getSettings().setJavaScriptEnabled(true);
         webViewBody.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         webViewBody.getSettings().setTextSize(MyFontSize.getTextSizeWebViewCurrent(getContext()));
+        webViewBody.getSettings().setAppCacheEnabled(true);
+        webViewBody.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             webViewBody.getSettings().setAllowUniversalAccessFromFileURLs(true);
             webViewBody.getSettings().setAllowFileAccessFromFileURLs(true);
@@ -293,8 +296,13 @@ public class NodeBodyFragment extends Fragment {
                 MyBlognoneWeb.cssBlognone +
                 htmlBody;
 
-
-        webViewBody.loadDataWithBaseURL(null, htmlBody, mime, encoding, null);
+        final String finalHtmlBody = htmlBody;
+        webViewBody.post(new Runnable() {
+            @Override
+            public void run() {
+                webViewBody.loadDataWithBaseURL(null, finalHtmlBody, mime, encoding, null);
+            }
+        });
 
         updateComment();
 
@@ -344,5 +352,6 @@ public class NodeBodyFragment extends Fragment {
     private void saveToHistory() {
         BlognoneHistoryTopicDatabase.insert(nodeId, node);
     }
+
 
 }

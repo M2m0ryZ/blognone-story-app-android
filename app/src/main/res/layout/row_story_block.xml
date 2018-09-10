@@ -87,7 +87,7 @@
                                     <ImageView
                                         android:id="@+id/img_story"
                                         android:layout_width="match_parent"
-                                        android:layout_height="120dp"
+                                        android:layout_height="@dimen/story_block_min_height"
                                         android:scaleType="centerCrop"
                                         android:src="@drawable/sample_cover"/>
 

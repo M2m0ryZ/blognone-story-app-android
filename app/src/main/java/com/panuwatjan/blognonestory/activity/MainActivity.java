@@ -23,6 +23,7 @@ import com.panuwatjan.blognonestory.MyUtils;
 import com.panuwatjan.blognonestory.R;
 import com.panuwatjan.blognonestory.fragment.AboutFragment;
 import com.panuwatjan.blognonestory.fragment.CompaniesListFragment;
+import com.panuwatjan.blognonestory.fragment.JobsListFragment;
 import com.panuwatjan.blognonestory.fragment.MainFragment;
 import com.panuwatjan.blognonestory.fragment.NodeFragment;
 import com.panuwatjan.blognonestory.fragment.NodeListFragment;
@@ -131,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
             setContent(SettingFragment.newInstance(), MyConstants.TAG_NAV_SETTING);
         } else if (id == R.id.nav_company) {
             setContent(CompaniesListFragment.newInstance(), MyConstants.TAG_NAV_COMPANIES);
+        }else if (id == R.id.nav_job) {
+            setContent(JobsListFragment.newInstance(), MyConstants.TAG_NAV_JOBS);
         }
 
         MyUtils.vibrate();

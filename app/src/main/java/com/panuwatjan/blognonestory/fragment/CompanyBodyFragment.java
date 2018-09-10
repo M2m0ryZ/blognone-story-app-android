@@ -284,6 +284,12 @@ public class CompanyBodyFragment extends Fragment {
 
         webViewBody.loadDataWithBaseURL(null, htmlBody, mime, encoding, null);
 
+        if(MyUtils.isTablet()){
+            llStoryContainer.setOrientation(LinearLayout.HORIZONTAL);
+        }else{
+            llStoryContainer.setOrientation(LinearLayout.VERTICAL);
+        }
+
         List<StoryBlockDao> listStory = node.getRichProfile().getStoryBlock();
         if (listStory != null && !listStory.isEmpty()) {
             llStoryMainContainer.setVisibility(VISIBLE);

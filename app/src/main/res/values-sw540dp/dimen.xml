@@ -5,4 +5,6 @@
     <dimen name="font_size_tab">18sp</dimen>
     <dimen name="icon_size_splash_screen">320dp</dimen>
     <dimen name="fab_size">100dp</dimen>
+
+    <dimen name="story_block_min_height">200dp</dimen>
 </resources>

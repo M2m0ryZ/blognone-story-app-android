@@ -3,6 +3,7 @@ package com.panuwatjan.blognonestory.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -105,8 +106,12 @@ public class CompaniesListFragment extends Fragment {
         progress = (CircularProgressBar) v.findViewById(R.id.progress);
         progress.setVisibility(View.GONE);
 
-        layoutManager = new LinearLayoutManager(getContext());
+        if (MyUtils.isTablet()) {
+            layoutManager = new GridLayoutManager(getContext(), 3);
+        } else {
+            layoutManager = new LinearLayoutManager(getContext());
 
+        }
         mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setItemViewCacheSize(8);
@@ -140,29 +145,8 @@ public class CompaniesListFragment extends Fragment {
     }
 
     public void selectCompany(CompanyDao node) {
-        if (MyUtils.isTablet()) {
-//            if (mode == MODE_JOBS_CACHE) {
-//                Fragment fragment = JobsBodyFragment.newInstance(node.getCompany().getSlug(), node.getSlug(), true);
-//                getChildFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.content_node_content_container, fragment)
-//                        .commit();
-//            } else {
-//                Fragment fragment = JobsBodyFragment.newInstance(node.getCompany().getSlug(), node.getSlug());
-//                getChildFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.content_node_content_container, fragment)
-//                        .commit();
-//            }
-        } else {
-            if (mode == MODE_JOBS_CACHE) {
-                Fragment fragment = CompanyBodyFragment.newInstance(node.getSlug(), true);
-                ((MainActivity) getActivity()).setContent(fragment, "");
-            } else {
-                Fragment fragment = CompanyBodyFragment.newInstance(node.getSlug());
-                ((MainActivity) getActivity()).setContent(fragment, "");
-            }
-        }
+        Fragment fragment = CompanyBodyFragment.newInstance(node.getSlug());
+        ((MainActivity) getActivity()).setContent(fragment, "");
     }
 
     @Override
@@ -240,13 +224,6 @@ public class CompaniesListFragment extends Fragment {
 
     private void update() {
         if (isAdded()) {
-            if (MyUtils.isTablet() && indexSelected == -1) {
-                if (listCompanies.size() > 0) {
-                    selectCompany(listCompanies.get(0));
-                    indexSelected = 0;
-                }
-            }
-
             adapter.setData(listCompanies);
             adapter.setEnableShowDetail(MySetting.isSettingShowDetailOfTopic(getContext()));
             adapter.notifyDataSetChanged();

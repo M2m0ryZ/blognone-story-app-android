@@ -11,4 +11,5 @@
     <dimen name="icon_size_splash_screen">200dp</dimen>
 
     <dimen name="fab_size">60dp</dimen>
+    <dimen name="story_block_min_height">120dp</dimen>
 </resources>

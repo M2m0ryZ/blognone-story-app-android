@@ -2,9 +2,16 @@ package com.panuwatjan.blognonestory.service.blognone.jobs;
 
 import android.os.Build;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
@@ -51,7 +58,10 @@ public class MyBlognoneJobsService {
         Converter.Factory factory = null;
         MyBlognoneJobsService.modeBaseUrl = modeBaseUrl;
         if (modeConverter == CONVERTER_GSON) {
-            factory = GsonConverterFactory.create();
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            gsonBuilder.setLenient();
+            Gson gson = gsonBuilder.create();
+            factory = GsonConverterFactory.create(gson);
         } else {
             factory = ScalarsConverterFactory.create();
         }
@@ -64,17 +74,16 @@ public class MyBlognoneJobsService {
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
-//                .addInterceptor(logging)
-//                .addInterceptor(new Interceptor() {
-//                    @Override
-//                    public Response intercept(Chain chain) throws IOException {
-//                        Request request = chain.request().newBuilder()
-//                                .addHeader("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36")
-//                                .addHeader("X-Requested-With", "XMLHttpRequest")
-//                                .build();
-//                        return chain.proceed(request);
-//                    }
-//                })
+                .addInterceptor(logging)
+                .addInterceptor(new Interceptor() {
+                    @Override
+                    public Response intercept(Chain chain) throws IOException {
+                        Request request = chain.request().newBuilder()
+                                .addHeader("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36")
+                                .build();
+                        return chain.proceed(request);
+                    }
+                })
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)

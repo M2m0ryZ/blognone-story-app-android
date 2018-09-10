@@ -30,6 +30,7 @@ import com.panuwatjan.blognonestory.service.blognone.jobs.MyBlognoneJobsManager;
 import com.panuwatjan.blognonestory.view.EndlessRecyclerOnScrollListener;
 import com.panuwatjan.blognonestory.view.MyFilterTagView;
 import com.panuwatjan.blognonestory.view.MyRowJobsTitleView;
+import com.panuwatjan.blognonestory.view.MySearchJobView;
 
 import java.util.ArrayList;
 
@@ -57,7 +58,7 @@ public class JobsListFragment extends Fragment {
     private boolean loading = false;
     private TextView tvNoData;
     private TextView tvKeyword;
-    private FrameLayout contentNodeContentContainer;  // for tablet.
+    private FrameLayout contentJobsSearchContainer;  // for tablet.
     private LinearLayout llFilterJobTypeContainer;
     private LinearLayout llFilterJobLevelContainer;
     private LinearLayout llFilterJobFunctionContainer;
@@ -81,6 +82,7 @@ public class JobsListFragment extends Fragment {
         setHasOptionsMenu(true);
         View v = inflater.inflate(R.layout.fragment_jobs_list, container, false);
 
+        getActivity().setTitle("Jobs");
         Bundle bundle = getArguments();
         if (bundle != null) {
 
@@ -147,40 +149,32 @@ public class JobsListFragment extends Fragment {
 
         tvNoData = (TextView) v.findViewById(R.id.tv_no_data);
         tvNoData.setVisibility(View.GONE);
+
         tvKeyword = (TextView) v.findViewById(R.id.tv_keyword);
         llFilterJobTypeContainer = (LinearLayout) v.findViewById(R.id.ll_filter_job_type_container);
         llFilterJobLevelContainer = (LinearLayout) v.findViewById(R.id.ll_filter_job_level_container);
         llFilterJobFunctionContainer = (LinearLayout) v.findViewById(R.id.ll_filter_job_function_container);
 
         if (MyUtils.isTablet()) {
-            contentNodeContentContainer = (FrameLayout) v.findViewById(R.id.content_node_content_container);
+            contentJobsSearchContainer = (FrameLayout) v.findViewById(R.id.content_search_job_container);
+            contentJobsSearchContainer.removeAllViews();
+
+            MySearchJobView view = new MySearchJobView(getContext());
+            view.setOnSearchFormListener(new MySearchJobView.OnSearchFormListener() {
+                @Override
+                public void onSubmit(SearchJobsDao s) {
+                    sj = s;
+                    page = 1;
+                    loadJobsListData();
+                }
+            });
+            contentJobsSearchContainer.addView(view);
         }
     }
 
     public void selectNode(JobsDao node) {
-        if (MyUtils.isTablet()) {
-            if (mode == MODE_JOBS_CACHE) {
-                Fragment fragment = JobsBodyFragment.newInstance(node.getCompany().getSlug(), node.getSlug(), true);
-                getChildFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.content_node_content_container, fragment)
-                        .commit();
-            } else {
-                Fragment fragment = JobsBodyFragment.newInstance(node.getCompany().getSlug(), node.getSlug());
-                getChildFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.content_node_content_container, fragment)
-                        .commit();
-            }
-        } else {
-            if (mode == MODE_JOBS_CACHE) {
-                Fragment fragment = JobsBodyFragment.newInstance(node.getCompany().getSlug(), node.getSlug(), true);
-                ((MainActivity) getActivity()).setContent(fragment, "");
-            } else {
-                Fragment fragment = JobsBodyFragment.newInstance(node.getCompany().getSlug(), node.getSlug());
-                ((MainActivity) getActivity()).setContent(fragment, "");
-            }
-        }
+        Fragment fragment = JobsBodyFragment.newInstance(node.getCompany().getSlug(), node.getSlug());
+        ((MainActivity) getActivity()).setContent(fragment, "");
     }
 
     @Override
@@ -208,7 +202,7 @@ public class JobsListFragment extends Fragment {
     private void openSearchJbsDialog() {
         final SearchJobsDialog dialog = new SearchJobsDialog(getContext());
         dialog.setSearchJobs(sj);
-        dialog.setOnSearchFormListener(new SearchJobsDialog.OnSearchFormListener() {
+        dialog.setOnSearchFormListener(new MySearchJobView.OnSearchFormListener() {
             @Override
             public void onSubmit(SearchJobsDao searchJobsDao) {
                 dialog.dismiss();
@@ -277,13 +271,6 @@ public class JobsListFragment extends Fragment {
 
     private void update() {
         if (isAdded()) {
-            if (MyUtils.isTablet() && indexSelected == -1) {
-                if (listJobs.size() > 0) {
-                    selectNode(listJobs.get(0));
-                    indexSelected = 0;
-                }
-            }
-
             adapter.setData(listJobs);
             adapter.setEnableShowDetail(MySetting.isSettingShowDetailOfTopic(getContext()));
             adapter.notifyDataSetChanged();

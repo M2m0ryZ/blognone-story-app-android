@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.widget.ImageView;
 
+import com.bumptech.glide.DrawableTypeRequest;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
@@ -13,6 +14,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 public class MyGlide {
     public static void load(Context context, ImageView imgView, String url) {
+        load(context, imgView, url, 0);
+    }
+
+    public static void load(Context context, ImageView imgView, String url, int errorImage) {
         if (url == null) {
             url = "";
         }
@@ -22,10 +27,14 @@ public class MyGlide {
         }
 
         if (context != null) {
-            Glide.with(context)
-                    .load(url)
-                    .error(R.color.colorPrimary)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+            DrawableTypeRequest<String> builder = Glide.with(context)
+                    .load(url);
+
+            if (errorImage != 0) {
+                builder.error(errorImage);
+            }
+
+            builder.diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(imgView);
         }
     }

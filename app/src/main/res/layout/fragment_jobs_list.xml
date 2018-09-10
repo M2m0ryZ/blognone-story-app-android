@@ -36,7 +36,6 @@
                     android:layout_gravity="center_vertical"
                     android:orientation="vertical">
 
-
                     <com.panuwatjan.blognonestory.view.MyTextView
                         android:id="@+id/tv_keyword"
                         android:layout_width="wrap_content"
@@ -57,6 +56,7 @@
                             android:orientation="horizontal">
                         </LinearLayout>
                     </HorizontalScrollView>
+
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -68,6 +68,7 @@
                             android:orientation="horizontal">
                         </LinearLayout>
                     </HorizontalScrollView>
+
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
