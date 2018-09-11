@@ -60,6 +60,7 @@ public class CompanyBodyFragment extends Fragment {
     private String companySlug;
     private ImageView imgCover;
     private ImageView imgLogo;
+    private ImageView imgVerified;
     private TextView tvCompany;
     private TextView tvDescription;
     private FrameLayout llContainerBodyBorder;
@@ -155,6 +156,7 @@ public class CompanyBodyFragment extends Fragment {
 
         imgCover = (ImageView) v.findViewById(R.id.img_cover);
         imgLogo = (ImageView) v.findViewById(R.id.img_logo);
+        imgVerified = (ImageView) v.findViewById(R.id.img_verified);
         tvCompany = (TextView) v.findViewById(R.id.tv_company);
         tvDescription = (TextView) v.findViewById(R.id.tv_description);
         llContainerBodyBorder = (FrameLayout) v.findViewById(R.id.ll_container_body_border);
@@ -173,6 +175,14 @@ public class CompanyBodyFragment extends Fragment {
         llStoryMainContainer = (LinearLayout) v.findViewById(R.id.ll_story_main_container);
         llTeamMainContainer = (LinearLayout) v.findViewById(R.id.ll_team_main_container);
         llOtherJobMainContainer = (LinearLayout) v.findViewById(R.id.ll_other_job_main_container);
+
+        if (MyUtils.isTablet() && MyUtils.isLandscape()) {
+            llStoryContainer.setOrientation(LinearLayout.HORIZONTAL);
+        } else {
+            llStoryContainer.setOrientation(LinearLayout.VERTICAL);
+        }
+
+
     }
 
     @Override
@@ -242,6 +252,7 @@ public class CompanyBodyFragment extends Fragment {
 
     private void update() {
         tvCompany.setText(node.getNameEn());
+        tvCompanyNameWorkingAt.setText("Working at "+node.getNameEn());
 
         if (node.getLogo() == null) {
             imgLogo.setVisibility(GONE);
@@ -263,6 +274,11 @@ public class CompanyBodyFragment extends Fragment {
             MyGlide.load(getContext(), imgCompany2, node.getRichProfile().getCover3());
         }
 
+        if (node.getVerified()) {
+            imgVerified.setVisibility(VISIBLE);
+        } else {
+            imgVerified.setVisibility(GONE);
+        }
 
         tvDescription.setText(node.getIndustry());
 
@@ -284,11 +300,6 @@ public class CompanyBodyFragment extends Fragment {
 
         webViewBody.loadDataWithBaseURL(null, htmlBody, mime, encoding, null);
 
-        if(MyUtils.isTablet()){
-            llStoryContainer.setOrientation(LinearLayout.HORIZONTAL);
-        }else{
-            llStoryContainer.setOrientation(LinearLayout.VERTICAL);
-        }
 
         List<StoryBlockDao> listStory = node.getRichProfile().getStoryBlock();
         if (listStory != null && !listStory.isEmpty()) {

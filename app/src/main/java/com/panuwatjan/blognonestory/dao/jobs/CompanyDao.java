@@ -38,6 +38,9 @@ public class CompanyDao {
     @SerializedName("premium")
     @Expose
     private Boolean premium;
+    @SerializedName("verified")
+    @Expose
+    private Boolean verified;
     @SerializedName("phone")
     @Expose
     private String phone;
@@ -196,5 +199,11 @@ public class CompanyDao {
         this.youtube = youtube;
     }
 
+    public Boolean getVerified() {
+        return verified;
+    }
 
+    public void setVerified(Boolean verified) {
+        this.verified = verified;
+    }
 }

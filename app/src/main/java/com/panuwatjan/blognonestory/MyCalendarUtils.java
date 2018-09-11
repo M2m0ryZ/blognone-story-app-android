@@ -20,7 +20,7 @@ public class MyCalendarUtils {
 //
 //        String[] str3 = str
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS", Locale.getDefault());
         try {
             Calendar cal = Calendar.getInstance();
             cal.setTime(sdf.parse(timestamp));

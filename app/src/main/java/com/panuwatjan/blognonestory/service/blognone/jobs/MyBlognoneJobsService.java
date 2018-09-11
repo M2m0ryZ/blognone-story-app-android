@@ -40,14 +40,17 @@ public class MyBlognoneJobsService {
     private static String session = "";
 
     public static MyBlognoneJobsAPI getService() {
+        modeBaseUrl = MODE_BASE_URL_API;
         return getService(CONVERTER_GSON);
     }
 
     public static MyBlognoneJobsAPI getService(int modeConverter) {
         Converter.Factory factory = null;
         if (modeConverter == CONVERTER_GSON) {
+            modeBaseUrl = MODE_BASE_URL_API;
             factory = GsonConverterFactory.create();
         } else {
+            modeBaseUrl = MODE_BASE_URL_WEB;
             factory = ScalarsConverterFactory.create();
         }
 

@@ -50,9 +50,9 @@ public class MySearchJobView extends FrameLayout {
     private ImageView imgArrowJobFunction;
     private Button btnSearch;
 
-    private boolean enableJobType;
-    private boolean enableJobLevel;
-    private boolean enableJobFunction;
+    private boolean enableJobType = false;
+    private boolean enableJobLevel = false;
+    private boolean enableJobFunction = false;
 
     private OnSearchFormListener mOnSearchFormListener;
 
@@ -194,7 +194,14 @@ public class MySearchJobView extends FrameLayout {
         }
     }
 
-    private void update() {
+    public void setAllFilterDisplay(boolean is) {
+        enableJobFunction = is;
+        enableJobLevel = is;
+        enableJobType = is;
+        update();
+    }
+
+    public void update() {
         update(UPDATE_ALL);
     }
 

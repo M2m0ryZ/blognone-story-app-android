@@ -1,6 +1,7 @@
 package com.panuwatjan.blognonestory.fragment;
 
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -65,6 +66,28 @@ public class CompaniesListFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        MyUtils.log("onConfigurationChanged");
+
+        layoutManager = getLayoutManager();
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.invalidate();
+    }
+
+    private LinearLayoutManager getLayoutManager() {
+        if (MyUtils.isTablet()) {
+            int column = 2; // Portrait.
+            if (MyUtils.isLandscape()) {
+                column = 3;
+            }
+            layoutManager = new GridLayoutManager(getContext(), column);
+        } else {
+            layoutManager = new LinearLayoutManager(getContext());
+        }
+        return layoutManager;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,6 +97,7 @@ public class CompaniesListFragment extends Fragment {
         getActivity().setTitle("Companies");
         View v = inflater.inflate(R.layout.fragment_companies_list, container, false);
 
+        MyUtils.log("onCreateView");
         Bundle bundle = getArguments();
         if (bundle != null) {
 
@@ -95,8 +119,11 @@ public class CompaniesListFragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt(MyConstants.KEY_POSITION_RECYCLERVIEW, layoutManager.findFirstVisibleItemPosition()); // get current recycle view position here.
         outState.putInt(MyConstants.KEY_PAGE, page);
+        MyUtils.log("onSaveInstanceState");
         super.onSaveInstanceState(outState);
     }
+
+
 
     public static CompaniesListFragment getCompaniesListFragment() {
         return sCompaniesListFragment;
@@ -106,12 +133,7 @@ public class CompaniesListFragment extends Fragment {
         progress = (CircularProgressBar) v.findViewById(R.id.progress);
         progress.setVisibility(View.GONE);
 
-        if (MyUtils.isTablet()) {
-            layoutManager = new GridLayoutManager(getContext(), 3);
-        } else {
-            layoutManager = new LinearLayoutManager(getContext());
-
-        }
+        layoutManager = getLayoutManager();
         mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setItemViewCacheSize(8);
@@ -173,11 +195,6 @@ public class CompaniesListFragment extends Fragment {
             MyBlognoneJobsManager.loadCompaniesList(page, new MyBlognoneJobsManager.OnLoadCompaniesDataListListener() {
                 @Override
                 public void onLoaded(ArrayList<CompanyDao> list) {
-                    if (page == 1) {
-//                        MyCache.setNodeList(getContext(), list);
-//                        MyWidgetManager.updateWidget();
-                    }
-
                     listCompanies.addAll(list);
                     update();
                     loadingFinish();

@@ -160,6 +160,7 @@ public class JobsListFragment extends Fragment {
             contentJobsSearchContainer.removeAllViews();
 
             MySearchJobView view = new MySearchJobView(getContext());
+            view.setAllFilterDisplay(true);
             view.setOnSearchFormListener(new MySearchJobView.OnSearchFormListener() {
                 @Override
                 public void onSubmit(SearchJobsDao s) {

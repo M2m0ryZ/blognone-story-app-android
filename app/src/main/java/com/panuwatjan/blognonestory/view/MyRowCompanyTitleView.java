@@ -25,6 +25,7 @@ public class MyRowCompanyTitleView extends FrameLayout {
 
     private OnCompanyListener mOnCompanyListener;
     private LinearLayout llDetailContainer;
+    private ImageView imgVerified;
     private ImageView imgCover;
     private TextView tvTitle;
     private TextView tvCompany;
@@ -60,6 +61,7 @@ public class MyRowCompanyTitleView extends FrameLayout {
 
     private void initView() {
         imgCover = findViewById(R.id.img_cover);
+        imgVerified = findViewById(R.id.img_verified);
         tvCompany = findViewById(R.id.tv_company);
         tvFeature = (TextView) findViewById(R.id.tv_feature);
         tvType = (TextView) findViewById(R.id.tv_type);
@@ -91,11 +93,17 @@ public class MyRowCompanyTitleView extends FrameLayout {
             tvFeature.setVisibility(GONE);
         }
 
+        if (company.getVerified()) {
+            imgVerified.setVisibility(VISIBLE);
+        } else {
+            imgVerified.setVisibility(GONE);
+        }
+
         tvType.setText(company.getIndustry());
 
         tvDescription.setText(company.getBrief());
 
-        MyGlide.load(getContext(), imgCover, company.getCover(),R.drawable.bg_empty);
+        MyGlide.load(getContext(), imgCover, company.getCover(), R.drawable.bg_empty);
 
     }
 

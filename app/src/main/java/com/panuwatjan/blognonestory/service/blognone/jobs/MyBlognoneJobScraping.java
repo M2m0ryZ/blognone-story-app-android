@@ -1,5 +1,6 @@
 package com.panuwatjan.blognonestory.service.blognone.jobs;
 
+import com.panuwatjan.blognonestory.MyUtils;
 import com.panuwatjan.blognonestory.dao.jobs.MessageCompanyDetailDao;
 import com.panuwatjan.blognonestory.dao.jobs.MessageJobDetailDao;
 import com.google.gson.Gson;
@@ -30,8 +31,9 @@ public class MyBlognoneJobScraping {
     public static MessageCompanyDetailDao getCompanyBody(String html) {
         Document doc = Jsoup.parse(html);
         try {
-            Element elementContainer = doc.select("#state").first();
+            Element elementContainer = doc.select("script#state").first();
             String json = elementContainer.html();
+            MyUtils.log(json);
             Gson gson = new Gson();
             MessageCompanyDetailDao msg = gson.fromJson(json, MessageCompanyDetailDao.class);
             return msg;

@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Build;
@@ -62,6 +63,10 @@ public class MyUtils {
         return MyContextor.getInstance().getResources().getBoolean(R.bool.is_tablet);
     }
 
+    public static boolean isLandscape() {
+        return MyContextor.getInstance().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+    }
+
     public static float convertDpToPixel(float dp, Context context) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
@@ -105,9 +110,11 @@ public class MyUtils {
         if (job != null) {
             openUrlInBrowser(activity, "https://jobs.blognone.com/company/" + job.getCompany().getSlug() + "/job" + job.getSlug());
         }
-    }    public static void openCompanyInBrowser(Activity activity, String  companySlug) {
+    }
+
+    public static void openCompanyInBrowser(Activity activity, String companySlug) {
         if (companySlug != null) {
-            openUrlInBrowser(activity, "https://jobs.blognone.com/company/" +companySlug);
+            openUrlInBrowser(activity, "https://jobs.blognone.com/company/" + companySlug);
         }
     }
 
@@ -120,6 +127,7 @@ public class MyUtils {
         String url = "https://jobs.blognone.com/company/" + job.getCompany().getSlug() + "/job" + job.getSlug();
         copyToClipboard(context, url);
     }
+
     public static void copyCompanyToClipboard(Context context, String companySlug) {
         String url = "https://jobs.blognone.com/company/" + companySlug;
         copyToClipboard(context, url);
