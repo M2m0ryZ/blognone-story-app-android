@@ -35,6 +35,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" android:host="www.blognone.com" />
                 <data android:scheme="http" android:host="www.blognone.com" />
+                <data android:scheme="https" android:host="jobs.blognone.com" />
+                <data android:scheme="http" android:host="jobs.blognone.com" />
             </intent-filter>
         </activity>
 

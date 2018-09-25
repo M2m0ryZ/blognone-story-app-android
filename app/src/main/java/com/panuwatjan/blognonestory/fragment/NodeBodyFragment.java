@@ -2,6 +2,8 @@ package com.panuwatjan.blognonestory.fragment;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -13,14 +15,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.panuwatjan.blognonestory.MyConstants;
 import com.panuwatjan.blognonestory.MyFontSize;
+import com.panuwatjan.blognonestory.MyImageUtils;
 import com.panuwatjan.blognonestory.MySetting;
 import com.panuwatjan.blognonestory.MyUtils;
 import com.panuwatjan.blognonestory.R;
@@ -35,7 +42,12 @@ import com.panuwatjan.blognonestory.service.blognone.web.MyBlognoneWeb;
 import com.panuwatjan.blognonestory.view.MyNodeOptionTabViewView;
 import com.panuwatjan.blognonestory.view.MyTagView;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import fr.castorflex.android.circularprogressbar.CircularProgressBar;
 
@@ -43,6 +55,8 @@ import fr.castorflex.android.circularprogressbar.CircularProgressBar;
  * A simple {@link Fragment} subclass.
  */
 public class NodeBodyFragment extends Fragment {
+
+    private  float dpi;
     private Context mContext;
     private boolean cacheMode = false;
     private BlognoneNodeDao node;
@@ -105,6 +119,7 @@ public class NodeBodyFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_node_body, container, false);
 
+        dpi = getResources().getDisplayMetrics().density;
         initView(v);
 
         if (savedInstanceState == null) {
@@ -132,6 +147,70 @@ public class NodeBodyFragment extends Fragment {
         llContainerBody = (LinearLayout) v.findViewById(R.id.ll_container_body);
 
         webViewBody = (WebView) v.findViewById(R.id.webview_body);
+        webViewBody.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    Uri uri = request.getUrl();
+                    String ex = uri.getLastPathSegment();
+                    if (ex.contains("jpg") || ex.contains("png")) {
+                        return true;
+                    }
+                }
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+
+            @SuppressWarnings("deprecation")
+            @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+                MyUtils.log("shouldInterceptRequest url = " + url);
+                final String mime = URLConnection.guessContentTypeFromName(url);
+                if (mime == null || !mime.startsWith("image")) {
+                    return super.shouldInterceptRequest(view, url);
+                }
+                try {
+                    Bitmap image = Glide.with(getContext()).load(url).asBitmap().into(-1, -1).get();
+                    MyUtils.log("shouldInterceptRequest image width = " + image.getWidth());
+                    if (image.getWidth() > 300) {
+                        image = MyImageUtils.resize(image, 300, 80);
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        if (mime.endsWith("jpeg")) {
+                            image.compress(Bitmap.CompressFormat.JPEG, 80, out);
+                        } else if (mime.endsWith("png")) {
+                            image.compress(Bitmap.CompressFormat.PNG, 80, out);
+                        } else {
+                            return super.shouldInterceptRequest(view, url);
+                        }
+
+                        image.recycle();
+                        InputStream in = new ByteArrayInputStream(out.toByteArray());
+                        return new WebResourceResponse(mime, "UTF-8", in);
+
+                    }else{
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        if (mime.endsWith("jpeg")) {
+                            image.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                        } else if (mime.endsWith("png")) {
+                            image.compress(Bitmap.CompressFormat.PNG, 100, out);
+                        } else {
+                            return super.shouldInterceptRequest(view, url);
+                        }
+
+                        image.recycle();
+                        InputStream in = new ByteArrayInputStream(out.toByteArray());
+                        return new WebResourceResponse(mime, "UTF-8", in);
+                    }
+
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        });
+
         webViewBody.getSettings().setJavaScriptEnabled(true);
         webViewBody.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         webViewBody.getSettings().setTextSize(MyFontSize.getTextSizeWebViewCurrent(getContext()));

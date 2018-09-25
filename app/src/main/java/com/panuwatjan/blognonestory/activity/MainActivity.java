@@ -23,6 +23,8 @@ import com.panuwatjan.blognonestory.MyUtils;
 import com.panuwatjan.blognonestory.R;
 import com.panuwatjan.blognonestory.fragment.AboutFragment;
 import com.panuwatjan.blognonestory.fragment.CompaniesListFragment;
+import com.panuwatjan.blognonestory.fragment.CompanyBodyFragment;
+import com.panuwatjan.blognonestory.fragment.JobsBodyFragment;
 import com.panuwatjan.blognonestory.fragment.JobsListFragment;
 import com.panuwatjan.blognonestory.fragment.MainFragment;
 import com.panuwatjan.blognonestory.fragment.NodeFragment;
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private int nodeId = -1;
     private static Activity activity;
     private String tag;
+    private String jobSlug;
+    private String companySlug;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,22 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment = NodeListFragment.newInstance(tag);
                 setContent(fragment, "");
                 tag = null;
+            }
+
+            jobSlug = intent.getStringExtra(MyConstants.KEY_JOB_SLUG);
+            companySlug = intent.getStringExtra(MyConstants.KEY_COMPANY_SLUG);
+
+            if (companySlug != null && jobSlug != null) {
+                JobsBodyFragment fragment = JobsBodyFragment.newInstance(companySlug,jobSlug);
+                setContent(fragment, "");
+                companySlug = null;
+                jobSlug = null;
+            }
+            else if (companySlug != null && jobSlug == null) {
+                CompanyBodyFragment fragment = CompanyBodyFragment.newInstance(companySlug);
+                setContent(fragment, "");
+                companySlug = null;
+                jobSlug = null;
             }
 
         }

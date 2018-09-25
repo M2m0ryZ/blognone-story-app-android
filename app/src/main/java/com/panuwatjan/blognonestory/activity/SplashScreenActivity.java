@@ -18,6 +18,8 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private int nodeId = -1;
     private String tag;
+    private String jobSlug;
+    private String companySlug;
 
 
     @Override
@@ -55,6 +57,22 @@ public class SplashScreenActivity extends AppCompatActivity {
                 String[] str2 = topic.split("\\?");
                 tag = str2[0];
 
+
+                navigateToMainActivity();
+            } else if (path.contains("/company/") && !path.contains("/job/")) {
+                // company case
+                String str = path.replace("//", "");
+                String[] str2 = str.split("/");
+                companySlug = str2[2];
+
+                navigateToMainActivity();
+            } else if (path.contains("/company/") && path.contains("/job/")) {
+                // Job case
+                String str = path.replace("//", "");
+                String[] str2 = str.split("/");
+                companySlug = str2[2];
+                jobSlug = str2[4];
+
                 navigateToMainActivity();
             } else {
                 navigateToMainActivity();
@@ -73,6 +91,8 @@ public class SplashScreenActivity extends AppCompatActivity {
                 Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
                 intent.putExtra(MyConstants.KEY_NODE_ID, nodeId);
                 intent.putExtra(MyConstants.KEY_NODE_TAG, tag);
+                intent.putExtra(MyConstants.KEY_JOB_SLUG, jobSlug);
+                intent.putExtra(MyConstants.KEY_COMPANY_SLUG, companySlug);
                 startActivity(intent);
                 finish();
             }

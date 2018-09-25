@@ -182,6 +182,10 @@ public class JobsListFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
         inflater.inflate(R.menu.node_job_list, menu);
+        if (MyUtils.isTablet()) {
+            MenuItem item = menu.findItem(R.id.action_search);
+            item.setVisible(false);
+        }
     }
 
     @Override
@@ -277,7 +281,7 @@ public class JobsListFragment extends Fragment {
             adapter.notifyDataSetChanged();
 
             if (sj.getKeyword().isEmpty()) {
-                tvKeyword.setText("All");
+                tvKeyword.setText("No keyword");
             } else {
                 tvKeyword.setText("\"" + sj.getKeyword() + "\"");
             }
